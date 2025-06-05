@@ -1,3 +1,4 @@
+import { ThemeProvider } from "next-themes";
 import { Footer } from "../footer";
 import { Header } from "../header";
 
@@ -6,10 +7,18 @@ type LayoutProps = {
 };
 export function Layout({ children }: LayoutProps) {
   return (
-    <div className="relative flex min-h-screen flex-col dark">
-      <Header />
-      <main className="flex-1 flex flex-col mb-12">{children}</main>
-      <Footer />
-    </div>
+    <ThemeProvider
+      attribute={"class"}
+      defaultTheme="dark"
+      disableTransitionOnChange
+    >
+      <div className="relative flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-1 flex flex-col mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          {children}
+        </main>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }

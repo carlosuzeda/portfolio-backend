@@ -1,4 +1,4 @@
-import { Moon } from "lucide-react";
+import { ThemeSwitcher } from "../switch-theme";
 import { Button } from "../ui/button";
 import Link from "next/link";
 
@@ -10,9 +10,7 @@ export function Header() {
           <Link href={"/"}>Carlos Uzeda</Link>
           <nav className="flex items-center gap-6">
             <Button variant={"secondary"}>EN</Button>
-            <Button variant={"ghost"}>
-              <Moon />
-            </Button>
+            <ThemeSwitcher />
           </nav>
         </div>
       </div>
